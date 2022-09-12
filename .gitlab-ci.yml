@@ -23,9 +23,12 @@ phpunit:
   stage: tests
   image: thecodingmachine/php:8.1-v4-cli-node16
   script:
-    - vendor/bin/phpunit
+    - XDEBUG_MODE=coverage vendor/bin/phpunit
   dependencies:
     - composer
+  coverage: '/^\s*Lines:\s*\d+.\d+\%./'
+  variables:
+    PHP_EXTENSIONS: xdebug
   artifacts:
     reports:
       junit: junit.xml
