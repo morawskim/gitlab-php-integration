@@ -4,7 +4,7 @@
          bootstrap="vendor/autoload.php"
          cacheResultFile=".phpunit.cache/test-results"
          executionOrder="depends,defects"
-         forceCoversAnnotation="true"
+         forceCoversAnnotation="false"
          beStrictAboutCoversAnnotation="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
@@ -24,4 +24,8 @@
             <directory suffix=".php">src</directory>
         </include>
     </coverage>
+
+    <logging>
+        <junit outputFile="junit.xml" />
+    </logging>
 </phpunit>
