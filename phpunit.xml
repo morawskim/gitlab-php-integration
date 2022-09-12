@@ -27,6 +27,7 @@
             <text outputFile="php://stdout"
                   showUncoveredFiles="false"
                   showOnlySummary="true" />
+            <cobertura outputFile="cobertura.xml" />
         </report>
     </coverage>
 

@@ -32,3 +32,6 @@ phpunit:
   artifacts:
     reports:
       junit: junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: cobertura.xml
