@@ -35,3 +35,15 @@ phpunit:
       coverage_report:
         coverage_format: cobertura
         path: cobertura.xml
+
+php-cs-fixer:
+  stage: tests
+  image: thecodingmachine/php:8.1-v4-cli-node16
+  script:
+    - ./vendor/bin/php-cs-fixer fix -v --dry-run --format=gitlab --using-cache=no | tee gl-cs-fixer.json
+  dependencies:
+    - composer
+  allow_failure: true
+  artifacts:
+    reports:
+      codequality: gl-cs-fixer.json
