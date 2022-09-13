@@ -1,5 +1,5 @@
 {
-    "name": "mmo/php-gitlab-integration-example",
+    "name": "mmo/php-calculator-example",
     "type": "library",
     "license": "MIT",
     "autoload": {
