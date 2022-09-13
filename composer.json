@@ -1,4 +1,5 @@
 {
+    "name": "mmo/php-gitlab-integration-example",
     "type": "library",
     "license": "MIT",
     "autoload": {

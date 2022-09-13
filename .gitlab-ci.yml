@@ -1,6 +1,7 @@
 stages:
   - prepare
   - tests
+  - deploy
 
 composer:
   stage: prepare
@@ -47,3 +48,11 @@ php-cs-fixer:
   artifacts:
     reports:
       codequality: gl-cs-fixer.json
+
+publish:
+  image: curlimages/curl:latest
+  stage: deploy
+  only:
+    - tags
+  script:
+    - 'curl -sS --show-error --header "Job-Token: $CI_JOB_TOKEN" --data tag=${CI_COMMIT_TAG} "${CI_API_V4_URL}/projects/$CI_PROJECT_ID/packages/composer"'
